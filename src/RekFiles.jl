@@ -1,4 +1,5 @@
 module RekFiles
+export REKHeader, size, scales, rekread
 
 struct REKHeader
     width::Int
@@ -71,7 +72,7 @@ function readvolume(io, header)
     
 end
 
-function readrek(fname)
+function rekread(fname)
 
     io = open(fname, "r")
     header = readheader(io)
